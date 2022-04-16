@@ -126,7 +126,15 @@ RSpec.describe 'Auction Spec Harness' do
       expect(@auction.bidders).to eq(['Megan', 'Bob', 'Mike'])
     end
 
-    it '11. Auction #bidder_info' do
+    it '11. Item #close_bidding' do
+      expect(@item1).to respond_to(:close_bidding).with(0).argument
+      expect(@item1.bids).to eq({@attendee1 => 22, @attendee2 => 20})
+      @item1.close_bidding
+      @item1.add_bid(@attendee3, 70)
+      expect(@item1.bids).to eq({@attendee1 => 22, @attendee2 => 20})
+    end
+
+    it '12. Auction #bidder_info' do
       expect(@auction).to respond_to(:bidder_info)
       expected = {
         @attendee1 => {
@@ -143,14 +151,6 @@ RSpec.describe 'Auction Spec Harness' do
         }
       }
       expect(@auction.bidder_info).to eq(expected)
-    end
-
-    it '12. Item #close_bidding' do
-      expect(@item1).to respond_to(:close_bidding).with(0).argument
-      expect(@item1.bids).to eq({@attendee1 => 22, @attendee2 => 20})
-      @item1.close_bidding
-      @item1.add_bid(@attendee3, 70)
-      expect(@item1.bids).to eq({@attendee1 => 22, @attendee2 => 20})
     end
   end
 
