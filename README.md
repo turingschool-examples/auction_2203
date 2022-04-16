@@ -9,6 +9,13 @@
 
 ## Iteration 1 - Items, Attendees & Auctions
 
+Graded Items:
+ 1. Create an Item
+ 1. Create an Attendee
+ 1. Create an Auction
+ 1. Add an Item to an Auction
+ 1. Return the list of item names from an Auction
+
 Use TDD to create Item, Attendee, & Auction that will respond to the interaction pattern below:
 
 ```ruby
@@ -55,6 +62,12 @@ pry(main)> auction.item_names
 ```
 
 ## Iteration 2 - Bidding!
+
+Graded Items:
+ 1. Add a bid to an Item
+ 1. Return the current high bid of an Item
+ 1. Return the list of unpopular items from an Auction
+ 1. Return the potential revenue from an Auction
 
 Use TDD to update your classes to respond to the following interaction pattern.  Some notes:
 - `unpopular_items` are those items which have no bids.
@@ -140,8 +153,13 @@ pry(main)> auction.potential_revenue
 
 ## Iteration 3 - More bidding stuff!
 
+Graded Items:
+ 1. Return the list of bidder names from an Auction
+ 1. Close bidding on an Item
+ 1. Return a hash of bidder information
+
 Use TDD to update your classes to respond to the following interaction pattern.  Some notes:
-- `bidders` should list the names of each attendee that bid on the item. 
+- `bidders` should list the names of each attendee that bid on the item.
 - `close_bidding` should update the item so that it will not accept additional bids.
 - `bidder_info` should return a hash with keys that are attendees, and values that are a hash with that attendee's budget and an array of items that attendee has bid on.
 
@@ -235,6 +253,10 @@ pry(main)> auction.bidder_info
 ```
 
 ## Iteration 4 - Dates! And closing the auction
+
+Graded Items:
+ 1. Return the creation date of an Auction
+ 1. Close an Auction
 
 Use TDD to update your classes to respond to the following interaction pattern.  Some notes:
 - An Auction will now be created with a date - whatever date the event is created on through the use of `Date.today`. The addition of a date to the event should NOT break any previous tests.  The `date` method will return a string representation of the date - 'dd/mm/yyyy'. We want you to test this in with a date that is IN THE PAST. In order to test the date method in a way that will work today, tomorrow and on any date in the future, you will need to use a stub :)
