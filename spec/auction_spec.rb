@@ -80,7 +80,12 @@ RSpec.describe Auction do
 
 
     it 'can tell potential revenue' do
-
+      @item1.add_bid(@attendee2, 20)
+      @item1.add_bid(@attendee1, 22)
+      @item4.add_bid(@attendee3, 50)
+      @item3.add_bid(@attendee2, 15)
+      
+      expect(@auction.potential_revenue).to eq(87)
     end
 
   end
