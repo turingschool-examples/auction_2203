@@ -164,17 +164,17 @@ RSpec.describe Auction do
        attendee1 =>
          {
            :budget => 50,
-           :items => ['Chalkware Piggy Bank']
+           :items => [item1]
          },
        attendee2 =>
          {
            :budget => 75,
-           :items => ['Chalkware Piggy Bank','Homemade Chocolate Chip Cookies']
+           :items => [item1,item3]
          },
        attendee3 =>
          {
            :budget => 100,
-           :items => ['2 Days Dogsitting']
+           :items => [item4]
          }
       }
     expect(auction.bidder_info).to eq(expected)
