@@ -53,5 +53,14 @@ RSpec.describe do
 
   expect(item1.bids).to eq({attendee2 => 20, attendee1 => 22})
   expect(item1.current_high_bid).to eq(22)
+
+    item4.add_bid(attendee3, 50)
+
+  expect(auction.unpopular_items).to eq([item2, item3, item5])
+
+    item3.add_bid(attendee2, 15)
+
+  expect(auction.unpopular_items).to eq([item2, item5])
+  expect(auction.potential_revenue).to eq(87)
   end
 end

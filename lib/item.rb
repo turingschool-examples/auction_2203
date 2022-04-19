@@ -13,8 +13,8 @@ attr_reader :name, :bids
   def current_high_bid
     arr = []
     @bids.map do |attendee, bid|
-      # require "pry"; binding.pry
       arr << bid
+      # require "pry"; binding.pry
     end
     arr.max
   end
