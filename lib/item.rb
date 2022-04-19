@@ -14,6 +14,12 @@ class Item
     @bids[attendee] = amount
   end
 
+  def current_high_bid
+    @bids.values.sort[-1]
+  end
+
+
+
 
 
 
