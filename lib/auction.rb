@@ -67,13 +67,27 @@ class Auction
       @items.each do |item|
         if item.bids.include?(attendee)
           item_array << item
-          info[attendee] = {budget: attendee.budget,
-                            items: item_array}
+          info[attendee] = {budget: attendee.budget, items: item_array}
         end
       end
     end
-    # require 'pry'; binding.pry
     info
+  end
+
+  def close_auction
+    closing = {}
+    high_bids = Hash.new{|h,k| h[k] = [0,0] }
+
+    @items.each do |item|
+      item.bids.each do |k, v|
+        if high_bids[k][0] < v
+          high_bids[k][0] = v
+          high_bids[k][1] = item
+        end
+      end
+    end
+    require 'pry'; binding.pry
+
   end
 
 
