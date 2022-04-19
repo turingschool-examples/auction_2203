@@ -18,6 +18,14 @@ class Auction
   end
 
   def potential_revenue
-    (@items - unpopular_items).map { |item| item.current_high_bid }.sum
+    items_bidded_on.map { |item| item.current_high_bid }.sum
+  end
+
+  def bidders
+    items_bidded_on.map { |item| item.bids.keys }.flatten.map { |bidder| bidder.name }.uniq
+  end
+
+  def items_bidded_on
+    @items - unpopular_items
   end
 end
