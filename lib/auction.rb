@@ -33,4 +33,14 @@ class Auction
     end
     bidders.uniq
   end
+
+  def bidder_info
+    bidder_info_hash = Hash.new
+    items.each do |item|
+      item.bids.each do |attendee, bid|
+        bidder_info_hash[attendee] = attendee.info
+      end
+    end
+    bidder_info_hash
+  end
 end
