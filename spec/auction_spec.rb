@@ -41,12 +41,15 @@ describe Auction do
   let(:attendee3) { Attendee.new({name: 'Mike', budget: '$100'}) }
   let(:auction) { Auction.new }
 
-  xit "Attendees can bid on items" do
+  it "Attendees can bid on items" do
     auction.add_item(item1)
     auction.add_item(item2)
     auction.add_item(item3)
     auction.add_item(item4)
     auction.add_item(item5)
+
+    item1.add_bid(attendee2, 20)
+    item1.add_bid(attendee1, 22)
 
     expected = {
       attendee2 => 20,

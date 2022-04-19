@@ -16,7 +16,7 @@ class Auction
     end
   end
 
-  def add
+  def add_bid(attendee, budget)
 
   end
 end
