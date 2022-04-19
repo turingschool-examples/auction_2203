@@ -42,15 +42,15 @@ class Auction
     end
     bidder_hash
   end
-  def close_auction
-  end_of_auction = {}
-    @items.each do |item|
-      if unpopular_items.include?(item)
-        end_of_auction[item] = 'Not Sold'
-      else
-        #Given more time, I would go through an attendees bids, sort them by
-        #most expensive, and pair them in the hash with their most expensive
-        #bid-on items (And then subtract that cost from their budget) and continue on in that way
-
-  end
+  # def close_auction
+  # end_of_auction = {}
+  #   @items.each do |item|
+  #     if unpopular_items.include?(item)
+  #       end_of_auction[item] = 'Not Sold'
+  #     else
+  #       #Given more time, I would go through an attendees bids, sort them by
+  #       #most expensive, and pair them in the hash with their most expensive
+  #       #bid-on items (And then subtract that cost from their budget) and continue on in that way
+  #
+  # end
 end
