@@ -54,6 +54,9 @@ describe Item do
       expected = { @attendee1 => 22,
                    @attendee2 => 20 }
       expect(@item1.bids).to eq(expected)
+      @item1.close_bidding
+      @item1.add_bid(@attendee3, 70)
+      expect(@item1.bids).to eq(expected)
     end
   end
 end
