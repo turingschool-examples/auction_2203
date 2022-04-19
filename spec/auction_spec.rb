@@ -10,7 +10,14 @@ RSpec.describe Auction do
   let(:auction) { Auction.new }
 
   it "exists and has attributes" do
-    expect(aution).to be_a Auction
+    expect(auction).to be_a Auction
     expect(auction.items).to eq([])
+  end
+
+  it "can add and store items" do
+    auction.add_item(item1)
+    auction.add_item(item2)
+
+    expect(auction.items).to eq([item1, item2])
   end
 end
