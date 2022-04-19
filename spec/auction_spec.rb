@@ -7,4 +7,5 @@ RSpec.describe Auction do
     auction = Auction.new
   expect(auction).to be_an_instance_of(Auction)
   end
+
 end
