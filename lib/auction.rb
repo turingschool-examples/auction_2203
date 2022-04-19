@@ -21,5 +21,12 @@ class Auction
     unpopular_items
   end
 
+  def potential_revenue
+    @items.map! { |item| item.current_high_bid }
+    sum = 0
+    @items.compact.map { |bid| sum += bid  }
+    sum
+  end
+
 
 end
