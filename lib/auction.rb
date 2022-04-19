@@ -25,8 +25,4 @@ class Auction
     @attendees << attendee
   end
 
-  # def add_bid(attendee, amount)
-  #
-  # end
-
 end
