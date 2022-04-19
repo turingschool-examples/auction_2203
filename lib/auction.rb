@@ -36,4 +36,8 @@ class Auction
     end
     bidder_names.uniq
   end
+
+  def bidder_info
+    # binding.pry
+  end
 end

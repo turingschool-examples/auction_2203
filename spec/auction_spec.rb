@@ -73,6 +73,11 @@ RSpec.describe Auction do
     end
 
     it "can list bidder info" do
+      item1.add_bid(attendee1, 22)
+      item1.add_bid(attendee2, 20)
+      item4.add_bid(attendee3, 50)
+      item3.add_bid(attendee2, 15)
+
       expect = {
         attendee1 => {budget: 50, items: [item1]},
         attendee2 => {budget: 75, items: [item1, item3]},
