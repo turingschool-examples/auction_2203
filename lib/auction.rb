@@ -27,4 +27,14 @@ class Auction
     end
     return no_bids
   end
+
+  def potential_revenue
+    total = 0
+    @items.each do |item|
+      # binding.pry
+      #bid value cannot be nil when added. edit current_high bid
+      total += item.current_high_bid
+    end
+    return total
+  end
 end

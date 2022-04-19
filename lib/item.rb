@@ -12,6 +12,8 @@ class Item
   end
 
   def current_high_bid
-    @bids.values.max
+    unless @bids.values == []
+      @bids.values.max
+    end
   end
 end
