@@ -12,4 +12,4 @@ RSpec.describe Attendee do
     expect(@attendee.name).to eq "Megan"
     expect(@attendee.budget).to eq 50
   end
-end
+end 
