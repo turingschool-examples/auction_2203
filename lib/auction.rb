@@ -25,4 +25,17 @@ attr_reader :items
     def bidders
         items.flat_map { |item| item.bids.keys.map { |attributes| attributes.name }}.uniq
     end
+
+    def bidder_info
+        bidders_info = {}
+        attendees = items.find_all { |item| item.bids != {} } 
+        attendees.each do |attendee|
+            bidders_info[attendee.bids] = {budget:0, items: []}
+        end
+        
+        # budget = 0
+        # items.each { |item| item.bids.map { |key, value| budget = key.budget }}
+        # # bidders_info[attendees] = {budget: budget, items: []} #has a stagnating budget - only returning last budget
+        # require 'pry'; binding.pry
+    end
 end
