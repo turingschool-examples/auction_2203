@@ -11,9 +11,13 @@ class Item
   end
 
   def current_high_bid
-    @bids.max_by do |bid|
-      bid[1]
-    end[1]
+    if @bids.count != 0
+      @bids.max_by do |bid|
+        bid[1]
+      end[1]
+    else
+      0
+    end
   end
 
 end
