@@ -9,8 +9,10 @@ class Item
 
   def add_bid(attendee, amount)
     @bids[attendee] = amount
-    require "pry"; binding.pry
   end
 
+  def current_high_bid
+    @bids.sort_by{|k, v| v}.last[1]
+  end
 
 end
