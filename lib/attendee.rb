@@ -6,7 +6,7 @@ class Attendee
 
   def initialize(info_hash)
     @name = info_hash[:name]
-    @budget = info_hash[:budget][1..2].to_i
+    @budget = info_hash[:budget][1..-1].to_i
   end
 
 end

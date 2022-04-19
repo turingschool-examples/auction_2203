@@ -7,10 +7,13 @@ class Item
   def initialize(name)
     @name = name
     @bids = {}
+    @accept_bids = true
   end
 
   def add_bid(attendee, bid)
-    @bids[attendee] = bid
+    if @accept_bids
+      @bids[attendee] = bid
+    end
   end
 
   def current_high_bid
@@ -21,6 +24,10 @@ class Item
       end
     end
     return high_bid
+  end
+
+  def close_bidding
+    @accept_bids = false
   end
 
 end
