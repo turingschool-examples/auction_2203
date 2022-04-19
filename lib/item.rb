@@ -11,5 +11,8 @@ class Item
     @bids[attendee] = bid
   end
 
+  def current_high_bid
+    @bids.values.max
+  end
 
 end
