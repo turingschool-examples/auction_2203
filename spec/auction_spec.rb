@@ -100,6 +100,12 @@ RSpec.describe Auction do
     expect(@auction.bidder_info).to eq(expected)
   end
 
+  it 'can list the date auction was created' do
+    auction1 = double("auction")
+    allow(auction1).to receive(:date)
+
+  end
+
 
 
 end
