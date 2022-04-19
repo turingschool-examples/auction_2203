@@ -26,7 +26,7 @@ RSpec.describe Auction do
     expect(auction.item_names).to eq(["Chalkware Piggy Bank", "Bamboo Picture Frame"])
   end
 
-  describe "Iteration 2" do
+  describe "Iteration 2-3" do
     let(:item3) { Item.new("Homemade Chocolate Chip Cookies") }
     let(:item4) { Item.new("2 Days Dogsitting") }
     let(:item5) { Item.new("Forever Stamps") }
@@ -39,12 +39,13 @@ RSpec.describe Auction do
       auction.add_item(item3)
       auction.add_item(item4)
       auction.add_item(item5)
-      item1.add_bid(attendee2, 20)
-      item1.add_bid(attendee1, 22)
-      item4.add_bid(attendee3, 50)
     end
 
     it "can list unpopular items" do
+      item1.add_bid(attendee2, 20)
+      item1.add_bid(attendee1, 22)
+      item4.add_bid(attendee3, 50)
+
       expect(auction.unpopular_items).to eq([item2, item3, item5])
 
       item3.add_bid(attendee2, 15)
@@ -53,9 +54,22 @@ RSpec.describe Auction do
     end
 
     it "has a potential revenue" do
+      item1.add_bid(attendee2, 20)
+      item1.add_bid(attendee1, 22)
+      item4.add_bid(attendee3, 50)
       item3.add_bid(attendee2, 15)
 
       expect(auction.potential_revenue).to eq(87)
+    end
+
+    # begin iteration 3
+    it "can list bidders" do
+      item1.add_bid(attendee1, 22)
+      item1.add_bid(attendee2, 20)
+      item4.add_bid(attendee3, 50)
+      item3.add_bid(attendee2, 15)
+
+      expect(auction.bidders).to eq(["Megan", "Bob", "Mike"])
     end
   end
 end
