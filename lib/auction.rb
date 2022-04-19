@@ -3,7 +3,6 @@ class Auction
 
   def initialize
     @items = []
-    @bids = {}
   end
 
   def add_item(item)
@@ -16,9 +15,6 @@ class Auction
     end
   end
 
-  def add_bid(attendee, bid)
-    require "pry"; binding.pry
-  end
 end
 
 

@@ -14,6 +14,7 @@ describe Item do
 
   it "has attributes" do
     expect(item1.name).to eq('Chalkware Piggy Bank')
+    expect(item1.bids).to eq({})
   end
 
   let(:item1) { Item.new('Chalkware Piggy Bank') }
@@ -42,5 +43,18 @@ describe Item do
     }
 
     expect(item1.bids).to eq(expected)
+  end
+
+  it "return current high bid of an item" do
+    auction.add_item(item1)
+    auction.add_item(item2)
+    auction.add_item(item3)
+    auction.add_item(item4)
+    auction.add_item(item5)
+
+    item1.add_bid(attendee2, 20)
+    item1.add_bid(attendee1, 22)
+
+    expect(item1.current_high_bid).to eq(22)
   end
 end

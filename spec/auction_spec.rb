@@ -14,7 +14,6 @@ describe Auction do
 
   it "has attributes" do
     expect(auction.items).to eq []
-    expect(auction.bids).to eq({})
   end
 
   it "can add items" do
