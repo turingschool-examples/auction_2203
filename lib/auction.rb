@@ -41,6 +41,18 @@ class Auction
     bidders_array.uniq
   end
 
-
+  def bidder_info
+    bidder_info_hash = {}
+    bid_items.each do |item|
+      item.bids.each do |bidder, bid|
+        if bidder_info_hash[bidder].nil?
+          bidder_info_hash[bidder] = {budget: bidder.budget, items: [item]}
+        else
+          bidder_info_hash[bidder][:items] << item
+        end
+      end
+    end
+    bidder_info_hash
+  end
 
 end
