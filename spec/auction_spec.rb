@@ -88,9 +88,11 @@ describe Auction do
     end
 
     it 'can return a hash of bidder information' do
+
       expected = {@attendee1 => {budget: 50, items: [@item1]},
-    @attendee2 => {budget: 75, items: [@item1, @item3],
+    @attendee2 => {budget: 75, items: [@item1, @item3]},
     @attendee3 => {budget: 100, items: [@item4]}}
+
     expect(@auction.bidder_info).to be_a(Hash)
     expect(@auction.bidder_info).to eq(expected)
     end
