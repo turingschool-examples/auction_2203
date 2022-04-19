@@ -13,5 +13,21 @@ class Auction
     @items.map do |item|
       item.name
     end
-  end 
+  end
+
+  def unpopular_items
+    no_bids_arr = []
+    @items.each do |item|
+      no_bids_arr << item if item.bids == {}
+      end
+      no_bids_arr
+    end
+
+  def potential_revenue
+    bids = []
+    @items.each do |item|
+      bids << item.current_high_bid
+    end
+    bids.compact.sum 
+  end
 end
