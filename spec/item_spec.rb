@@ -13,4 +13,11 @@ RSpec.describe Item do
       expect(item1.name).to eq 'Chalkware Piggy Bank'
     end
   end
+
+  describe "Iteration 2" do
+    it "has no bids by default" do
+      item1 = Item.new('Chalkware Piggy Bank')
+      expect(item1.bids).to eq {}
+    end
+  end
 end
