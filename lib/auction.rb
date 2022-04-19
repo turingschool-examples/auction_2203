@@ -1,8 +1,12 @@
 
 class Auction
-  attr_reader :items
+  attr_reader :items,
+              :attendees,
+              :bids
   def initialize
     @items = []
+    @attendees = []
+    @bids = Hash.new
   end
 
   def add_item(item)
@@ -13,9 +17,16 @@ class Auction
     item_arr = []
     @items.each do |item|
       item_arr << item.name
-      # require "pry"; binding.pry
     end
     item_arr
   end
+
+  def add_attendee(attendee)
+    @attendees << attendee
+  end
+
+  # def add_bid(attendee, amount)
+  #
+  # end
 
 end
