@@ -1,11 +1,14 @@
+require 'date'
 
 class Auction
   attr_reader :items,
-              :potential_revenue
+              :potential_revenue,
+              :date
 
   def initialize
     @items = []
     @potential_revenue = 0
+    # @date = date_string
   end
 
   def add_item(item)
@@ -54,5 +57,9 @@ class Auction
     end
     bidder_info_hash
   end
+
+  # def date_string
+  #   date = Date.new
+  # end
 
 end
