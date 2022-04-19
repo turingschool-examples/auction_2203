@@ -57,7 +57,7 @@ RSpec.describe Auction do
         @attendee2 => 22
       }
 
-      expect(item1.bids).to eq (expected)
+      expect(@item1.bids).to eq (expected)
     end
   end
 end

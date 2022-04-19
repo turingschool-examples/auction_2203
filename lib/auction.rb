@@ -16,4 +16,10 @@ class Auction
     end
     return item_name
   end
+
+  def bids
+    binding.pry 
+    bids_hash = Hash.new(0)
+
+  end
 end
