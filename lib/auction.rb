@@ -8,5 +8,9 @@ class Auction
     @items = Array.new
   end
 
+  def add_item(item)
+    @items << item
+  end
+
 
 end
