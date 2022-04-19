@@ -1,9 +1,15 @@
 class Auction
 
-  attr_reader :items
+  attr_reader :items, :today_date
 
   def initialize()
     @items = []
+    @today_date = Date.today
+  end
+
+  def date
+    # require 'pry'; binding.pry
+    date = "#{today_date.day}/#{today_date.month}/#{today_date.year}"
   end
 
   def add_item(item)
