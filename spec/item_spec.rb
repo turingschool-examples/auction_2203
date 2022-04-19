@@ -16,6 +16,7 @@ describe Item do
       expect(@item1.name).to eq('Chalkware Piggy Bank')
     end
   end
+
   context 'Iteration 2' do
     before(:each) do
       @item1 = Item.new('Chalkware Piggy Bank')
@@ -44,6 +45,7 @@ describe Item do
       expect(@item1.current_high_bid).to eq(22)
     end
   end
+
   context 'Iteration 3' do
     before(:each) do
       @item1 = Item.new('Chalkware Piggy Bank')
