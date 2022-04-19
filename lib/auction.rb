@@ -28,8 +28,19 @@ class Auction
     arr = []
     @items.each do |item|
       arr << item.current_high_bid.to_i
-      # require "pry"; binding.pry
     end
     arr.sum
   end
+
+  def bidders
+    arr = []
+    @items.map do |item|
+      item.bids.map |attendee, bid|
+        attendee.name
+      end
+      require "pry"; binding.pry
+    end
+  end
+  end
+
 end
