@@ -38,6 +38,20 @@ class Auction
   end
 
   def bidder_info
-    # binding.pry
+    bidder_objects = []
+    @items.each do |item|
+      item.bids.each do |bidder, bid|
+        bidder_objects << bidder
+      end
+    end
+
+    bidder_info_hash = Hash.new(0)
+    bidder_objects.each do |bidder|
+      bidder_info_hash[bidder] = {budget: bidder.budget, items: []}
+      @items.each do |item|
+        bidder_info_hash[bidder][:items] << item if item.bids.keys.include?(bidder)
+      end
+    end
+    bidder_info_hash
   end
 end
