@@ -54,7 +54,6 @@ RSpec.describe Item do
     item1.add_bid(attendee3, 70)
 
     expect(item1.bids).to eq(expected_hash)
-
   end
 
 end

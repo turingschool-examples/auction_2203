@@ -41,4 +41,6 @@ class Auction
     bidders_array.uniq
   end
 
+
+
 end
