@@ -4,4 +4,8 @@ class Item
   def initialize(name)
     @name = name
   end
+
+  def bids
+    bids = {}
+  end
 end
