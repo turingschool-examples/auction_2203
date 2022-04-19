@@ -10,29 +10,34 @@ class Auction
   end
 
   def item_names
-    @items.map do |item|
-      item.name
-    end
+    @items.map { |item| item.name }
   end
+  # def item_names
+  #   @items.map do |item|
+  #     item.name
+  #   end
+  # end
 
-  #  1. Return the list of unpopular items from an Auction: `Auction #unpopular_items`
   def unpopular_items
-    @items.select do |item|
-        # require "pry"; binding.pry
-      if item.bids == 0
-        return item
-      end
-    end
-# [3] pry(#<Auction>)> if item.bids == 0
-# [3] pry(#<Auction>)* return item
-# [3] pry(#<Auction>)* end
-# => nil
+    @items.select { |item| item.bids.empty? }
   end
+
+  # def unpopular_items
+  #   no_bid_items = []
+  #   @items.each do |item|
+  #     if item.bids.empty?
+  #     end
+  #     no_bid_items
+  #   end
+  # end
+  #
+  # def unpopular_items
+  #   no_bid_items = []
+  #   @items.each do |item|
+  #     if item.bids.keys.length == 0
+  #       no_bid_items << item
+  #     end
+  #   end
+  #   no_bid_items
+  # end
 end
-
-
-#  1. Return the potential revenue from an Auction: `Auction #potential_revenue`
-#
-# Use TDD to update your classes to respond to the following interaction pattern.  Some notes:
-# - `unpopular_items` are those items which have no bids.
-# - `potential_revenue` is the total possible sale price of the items (the items highest bid)

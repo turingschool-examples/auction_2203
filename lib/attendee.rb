@@ -4,7 +4,7 @@ class Attendee
 
   def initialize(attribute)
     @name = attribute[:name]
-    @budget = attribute[:budget].delete("'$'").to_i
+    @budget = attribute[:budget].delete("$").to_i
   end
 
 end

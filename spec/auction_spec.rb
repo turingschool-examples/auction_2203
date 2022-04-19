@@ -41,7 +41,7 @@ describe Auction do
   let(:attendee3) { Attendee.new({name: 'Mike', budget: '$100'}) }
   let(:auction) { Auction.new }
 
-  xit "returns a list of unpopular items" do
+  it "returns a list of unpopular items" do
     auction.add_item(item1)
     auction.add_item(item2)
     auction.add_item(item3)

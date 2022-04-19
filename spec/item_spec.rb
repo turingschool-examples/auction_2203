@@ -45,7 +45,7 @@ describe Item do
     expect(item1.bids).to eq(expected)
   end
 
-  xit "return current high bid of an item" do
+  it "return current high bid of an item" do
     auction.add_item(item1)
     auction.add_item(item2)
     auction.add_item(item3)
