@@ -28,6 +28,32 @@ class Auction
     @items.each do |item|
       bids << item.current_high_bid
     end
-    bids.compact.sum 
+    bids.compact.sum
+  end
+
+  def bidders
+    bidders = []
+    @items.each do |item|
+      # require 'pry';binding.pry
+      item.bids.keys.each do |attendee|
+        bidders << attendee.name
+      end
+      end
+      bidders.uniq
+  end
+
+
+  def bidder_info
+    bidder_hash = {}
+    @items.each do |item|
+      item.bids.each do |attendee|
+        attendee.each do |info|
+        bidder_hash[attendee] = {:budget => info.budget, :items => info.name}
+        require 'pry';binding.pry
+        end
+      end
+    end
+  bidder_hash
   end
 end
+# require 'pry';binding.pry
