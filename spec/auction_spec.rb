@@ -11,4 +11,10 @@ RSpec.describe Auction do
     expect(@auction). to be_a Auction
     expect(@auction.items).to eq []
   end
-end 
+
+  it 'can add auction items' do
+    @auction.add_item(@item1)
+    @auction.add_item(@item2)
+    expect(@auction.items).to eq [@item1, @item2]
+  end
+end
