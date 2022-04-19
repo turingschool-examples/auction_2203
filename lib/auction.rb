@@ -1,5 +1,6 @@
 require './lib/item'
 require './lib/attendee'
+require 'pry'
 
 class Auction
   attr_reader :items
@@ -12,5 +13,11 @@ class Auction
     @items << item
   end
 
-
+  def item_names
+    names = []
+    @items.each do |item|
+      names << item.name
+    end
+    names
+  end
 end

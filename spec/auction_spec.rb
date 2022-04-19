@@ -23,6 +23,7 @@ RSpec.describe Auction do
     auction.add_item(item2)
 
   expect(auction.items).to eq([item1, item2])
+  end
 
   it 'can output item names' do
     auction = Auction.new
@@ -34,10 +35,5 @@ RSpec.describe Auction do
     auction.add_item(item2)
 
   expect(auction.item_names).to eq(["Chalkware Piggy Bank", "Bamboo Picture Frame"])
-
-
-
   end
-
-
 end
