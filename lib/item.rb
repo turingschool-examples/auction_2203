@@ -11,8 +11,10 @@ end
   end
 
   def current_high_bid
-    @bids.values.max 
+    @bids.values.max
   end
 
+  def close_bidding
 
+  end
 end
