@@ -22,4 +22,10 @@ class Auction
     forseen_revenue = @items.map { |item| item.current_high_bid  }
     (forseen_revenue.compact).sum
   end
+
+  def bidders
+    all_attendee_bids = @items.map { |item| item.bids.keys }
+    indiv_attendee = all_attendee_bids.flatten.uniq
+    indiv_attendee.map { |attendee| attendee.name  }
+  end
 end
