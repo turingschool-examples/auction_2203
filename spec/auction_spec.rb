@@ -11,4 +11,8 @@ describe Auction do
   it "exists" do
     expect(auction).to be_a Auction
   end
+
+  it "has attributes" do
+    expect(auction.items).to eq []
+  end
 end
