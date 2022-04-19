@@ -13,5 +13,10 @@ RSpec.describe Item do
     item1 = Item.new('Chalkware Piggy Bank')
     expect(item1.name).to eq('Chalkware Piggy Bank')
     expect(item1.bids).to eq({})
-  end 
+  end
+
+  it "can close bids" do
+    item1 = Item.new('Chalkware Piggy Bank')
+    expect(item1).to be_an_instance_of(Item)
+  end
 end
