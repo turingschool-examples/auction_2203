@@ -26,4 +26,14 @@ class Auction
       memo + item.current_high_bid
     end
   end
+
+  def bidders
+    bidder_names = []
+    @items.each do |item|
+      item.bids.each do |bidder, bid|
+        bidder_names << bidder.name
+      end
+    end
+    bidder_names.uniq
+  end
 end
