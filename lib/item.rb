@@ -12,4 +12,13 @@ class Item
       bids[attendee] = amount
     return bids
   end
+
+  def current_high_bid
+    bid_arr = []
+    @bids.each do |bid|
+      bid_arr << bid[1]
+    end
+     bid_arr.sort.last
+  end
+
 end
