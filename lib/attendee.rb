@@ -1,7 +1,7 @@
 class Attendee
 
   attr_reader :stuff, :name, :budget
-
+#I struggled so much with this class and the tragic thing is it was because I was thinking too hard
   def initialize(stuff)
     @stuff = stuff
     # @name = name
