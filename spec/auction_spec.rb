@@ -21,12 +21,11 @@ RSpec.describe Auction do
   it 'can add items' do
     @auction.add_item(@item1)
     @auction.add_item(@item2)
-    # binding.pry
 
     expect(@auction.items).to eq([@item1, @item2])
   end
 
-  it 'can read item names' do
+  it 'can read item names' do #this could be combined with prev test
     @auction.add_item(@item1)
     @auction.add_item(@item2)
 
@@ -58,6 +57,13 @@ RSpec.describe Auction do
       expected = {@attendee2 => 20, @attendee1 => 22}
 
       expect(@item1.bids).to eq(expected)
+    end
+
+    it 'can tell the current high bid' do
+      @item1.add_bid(@attendee2, 20)
+      @item1.add_bid(@attendee1, 22)
+
+      expect(@item1.current_high_bid).to eq(22)
     end
   end
 end
