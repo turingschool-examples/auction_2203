@@ -28,4 +28,18 @@ class Auction
     indiv_attendee = all_attendee_bids.flatten.uniq
     indiv_attendee.map { |attendee| attendee.name  }
   end
+
+  def bidder_info
+    bidder_hash = {}
+    @items.each do |item|
+      item.bids.each do |k, v|
+        if bidder_hash.include?(k)
+          bidder_hash[k][:items] << item
+        else
+          bidder_hash[k] = {budget: (k.budget), items: [item]}
+        end
+      end
+    end
+    bidder_hash
+  end
 end
