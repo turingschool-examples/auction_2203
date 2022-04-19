@@ -25,4 +25,13 @@ class Auction
     end
     unpopular
   end
+
+  def potential_revenue
+    revenue = 0
+    @items.each do |item|
+      revenue += item.current_high_bid
+    end
+    revenue
+    # require 'pry'; binding.pry
+  end
 end
