@@ -49,4 +49,16 @@ class Auction
     date = Date.today
     "#{date.day}/0#{date.month}/#{date.year}"
   end
+
+  def close_auction
+    closing_hash = {}
+    @items.each do |item|
+      closing_hash[item] = if item.bids.length == 0
+                             'Not Sold'
+                           else
+                             item.bids.sort_by { |_name, bid| bid }.flatten[0]
+                           end
+    end
+    closing_hash
+  end
 end

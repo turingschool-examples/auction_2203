@@ -136,5 +136,16 @@ describe Auction do
       allow(Date).to receive(:today).and_return Date.new(2020, 2, 24)
       expect(@auction.date).to eq('24/02/2020')
     end
+
+    it 'can close the auction' do
+      expected = {
+        @item1 => @attendee2,
+        @item2 => 'Not Sold',
+        @item3 => @attendee2,
+        @item4 => @attendee3,
+        @item5 => @attendee1
+      }
+      expect(@auction.close_auction).to eq(expected)
+    end
   end
 end
