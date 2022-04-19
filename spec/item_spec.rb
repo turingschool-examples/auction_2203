@@ -13,12 +13,22 @@ RSpec.describe Item do
   end
 
   it 'exists' do
-    expect(item1).to be_a(Item)
+    expect(@item1).to be_a(Item)
   end
 
   it 'has attributes' do
-    expect(item1.name).to eq('Chalkware Piggy Bank')
-    expect(item1.bids).to eq({})
+    expect(@item1.name).to eq('Chalkware Piggy Bank')
+    expect(@item1.bids).to eq({})
+  end
+
+  it 'can have bids added' do
+    @item1.add_bid(@attendee2, 20)
+    @item1.add_bid(@attendee1, 22)
+    expected = {
+      @attendee2 => 20,
+      @attendee1 => 22
+    }
+    expect(@item1.bids).to eq(expected)
   end
 
 end
