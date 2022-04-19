@@ -21,12 +21,17 @@ class Auction
   end
 
   def bids
+    item_bids = {}
+    @items.map do |item|
+      item_bids[item] = @item.bids
+
+    end
     #Attendee being the key and the bids being the value
 
   end
 
   def add_bid(attendee, bid)
-    
+
 
   end
 

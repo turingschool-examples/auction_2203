@@ -64,6 +64,7 @@ RSpec.describe Auction do
     it "can bid on items" do
 
       expect(@item1.bids).to eq({})
+      #Taking a pom @11:40, back @11:50
     end
   end
 end
