@@ -17,4 +17,9 @@ class Auction
   def unpopular_items
     @items.select { |item| item.bids == {}}
   end
+
+  def potential_revenue
+    forseen_revenue = @items.map { |item| item.current_high_bid  }
+    (forseen_revenue.compact).sum
+  end
 end
