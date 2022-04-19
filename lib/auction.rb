@@ -44,5 +44,31 @@ class Auction
     names
   end
 
+  def bidder_attendees
+    attendees = []
+    @items.each do |item|
+      if item.bids.count > 0
+        attendees << item.bids.keys[0]
+      end
+    end
+    attendees
+  end
+
+  def bidder_info
+    info = Hash.new{|h,k| h[k] = {budget: 0, items: []} }
+    bidder_attendees.each do |attendee|
+      item_array = []
+      @items.each do |item|
+        if item.bids.include?(attendee)
+          item_array << item
+          info[attendee] = {budget: attendee.budget,
+                            items: item_array}
+        end
+      end
+    end
+    # require 'pry'; binding.pry
+    info
+  end
+
 
 end
