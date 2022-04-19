@@ -41,6 +41,10 @@ RSpec.describe Item do
   end
 
   describe "Iteration 3" do
+    it "open for bidding is true by default" do
+      item1 = Item.new('Chalkware Piggy Bank')
+      expect(item1.open_for_bidding).to eq(true)
+    end
     it "can close bidding" do
       item1 = Item.new('Chalkware Piggy Bank')
       attendee1 = Attendee.new({name: 'Megan', budget: '$50'})
