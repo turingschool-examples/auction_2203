@@ -13,5 +13,13 @@ class Auction
     @items.map! {|item| item.name}
   end
 
+  def unpopular_items
+    unpopular_items = []
+    @items.each do |item|
+      unpopular_items << item if item.bids == {}
+    end
+    unpopular_items
+  end
+
 
 end
