@@ -59,9 +59,10 @@ RSpec.describe Auction do
       item1.add_bid(attendee1, 22)
       item4.add_bid(attendee3, 50)
 
+      # require 'pry'; binding.pry
+
       expect(auction.unpopular_items.count).to eq(3)
       expect(auction.unpopular_items).to be_an_instance_of(Array)
-
 
       item3.add_bid(attendee2, 15)
 
