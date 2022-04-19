@@ -30,11 +30,16 @@ class Auction
     end
     bids.compact.sum
   end
+  # alternate version vvv
+  # def potential_revenue
+  #   @items.sum do |item|
+  #     item.current_high_bid.to_i
+  #   end
+  # end
 
   def bidders
     bidders = []
     @items.each do |item|
-      # require 'pry';binding.pry
       item.bids.keys.each do |attendee|
         bidders << attendee.name
       end
@@ -45,15 +50,20 @@ class Auction
 
   def bidder_info
     bidder_hash = {}
+
     @items.each do |item|
-      item.bids.each do |attendee|
-        attendee.each do |info|
-        bidder_hash[attendee] = {:budget => info.budget, :items => info.name}
-        require 'pry';binding.pry
+      item.bids.each do |attendee, amount|
+        if bidder_hash[attendee].nil?
+          bidder_hash[attendee] = {
+            budget: attendee.budget,
+            items: [item]
+          }
+        else
+          bidder_hash[attendee][:items] << item
         end
       end
     end
-  bidder_hash
+    bidder_hash
   end
 end
 # require 'pry';binding.pry
