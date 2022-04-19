@@ -36,4 +36,5 @@ RSpec.describe Auction do
 
   expect(auction.item_names).to eq(["Chalkware Piggy Bank", "Bamboo Picture Frame"])
   end
+
 end
