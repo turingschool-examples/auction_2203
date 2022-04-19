@@ -1,8 +1,9 @@
 class Auction
-  attr_reader :items
+  attr_reader :items, :bids
 
   def initialize
     @items = []
+    @bids = {}
   end
 
   def add_item(item)
@@ -13,6 +14,10 @@ class Auction
     @items.map do |item|
       item.name
     end
+  end
+
+  def add
+
   end
 end
 

@@ -14,6 +14,7 @@ describe Auction do
 
   it "has attributes" do
     expect(auction.items).to eq []
+    expect(auction.bids).to eq({})
   end
 
   it "can add items" do
@@ -40,7 +41,7 @@ describe Auction do
   let(:attendee3) { Attendee.new({name: 'Mike', budget: '$100'}) }
   let(:auction) { Auction.new }
 
-  it "Attendees can bid on items" do
+  xit "Attendees can bid on items" do
     auction.add_item(item1)
     auction.add_item(item2)
     auction.add_item(item3)
