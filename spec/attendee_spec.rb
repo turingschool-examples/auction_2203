@@ -16,9 +16,6 @@ RSpec.describe Attendee do
   it "has attributes" do
 
     expect(@attendee.name).to eq('Megan')
-    expect(@attendee.budget).to eq 50 
+    expect(@attendee.budget).to eq 50
   end
-
-
-
 end
