@@ -40,5 +40,14 @@ class Auction
     end.uniq
   end
 
+  def bidder_info
+    @items.flat_map do |item|
+      item.bids.map do |bid|
+        bid[0]
+      end
+    end.uniq
+    require "pry";binding.pry
+  end
+
 
 end

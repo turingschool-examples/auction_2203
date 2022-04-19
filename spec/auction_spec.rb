@@ -85,16 +85,16 @@ RSpec.describe Auction do
     @item3.add_bid(@attendee2, 15)
     expected = {
       @attendee1 => {
-        @attendee1[:budget],
-        [@item1]
+        :budget => @attendee1.budget,
+        :items => [@item1]
       },
       @attendee2 => {
-        @attendee2[:budget],
-        [@item1, @item3]
+        :budget => @attendee2.budget,
+        :items => [@item1, @item3]
       },
       @attendee3 => {
-        @attendee3[:budget],
-        [@item4]
+        :budget => @attendee3.budget,
+        :items => [@item4]
       }
     }
     expect(@auction.bidder_info).to eq(expected)
