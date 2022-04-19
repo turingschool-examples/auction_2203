@@ -8,7 +8,7 @@ class Auction
   def initialize
     @items = []
     @potential_revenue = 0
-    # @date = date_string
+    @date = date_string
   end
 
   def add_item(item)
@@ -57,9 +57,10 @@ class Auction
     end
     bidder_info_hash
   end
-  #
-  # def date_string
-  #   date = Date.new(19,03,2021)
-  # end
+
+  def date_string
+    today_date = Date.today
+    "#{today_date.day}/#{today_date.month}/#{today_date.year}"
+  end
 
 end

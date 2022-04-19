@@ -119,20 +119,20 @@ RSpec.describe Auction do
     expect(auction.bidder_info).to eq(expected_hash)
   end
 
-  # it "can return the date" do
-  #   auction.add_item(item1)
-  #   auction.add_item(item2)
-  #   auction.add_item(item3)
-  #   auction.add_item(item4)
-  #   auction.add_item(item5)
-  #   item1.add_bid(attendee1, 22)
-  #   item1.add_bid(attendee2, 20)
-  #   item4.add_bid(attendee3, 50)
-  #   item3.add_bid(attendee2, 15)
-  #   item1.close_bidding
-  #   item1.add_bid(attendee3, 70)
-  #
-  #   expect(auction.date).to eq("24/02/2020")
-  #
-  # end
+  it "can return the date" do
+    auction.add_item(item1)
+    auction.add_item(item2)
+    auction.add_item(item3)
+    auction.add_item(item4)
+    auction.add_item(item5)
+    item1.add_bid(attendee1, 22)
+    item1.add_bid(attendee2, 20)
+    item4.add_bid(attendee3, 50)
+    item3.add_bid(attendee2, 15)
+    item1.close_bidding
+    item1.add_bid(attendee3, 70)
+
+    expect(auction.date).to eq("19/4/2022")
+
+  end
 end
