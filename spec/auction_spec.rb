@@ -51,5 +51,13 @@ RSpec.describe Auction do
     it 'starts with no bids' do
       expect(@item1.bids).to eq({})
     end
+
+    it 'can add a bid to an item' do
+      @item1.add_bid(@attendee2, 20)
+      @item1.add_bid(@attendee1, 22)
+      expected = {@attendee2 => 20, @attendee1 => 22}
+
+      expect(@item1.bids).to eq(expected)
+    end
   end
 end
