@@ -8,4 +8,9 @@ RSpec.describe Auction do
     @auction = Auction.new
   end
 
+  it "exists" do
+    
+    expect(@auction).to be_a(Auction)
+  end
+
 end
