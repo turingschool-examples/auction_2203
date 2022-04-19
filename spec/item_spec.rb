@@ -29,6 +29,9 @@ RSpec.describe Item do
       @attendee1 => 22
     }
     expect(@item1.bids).to eq(expected)
+    expect(@item1.current_high_bid).to eq(22)
   end
+
+
 
 end
