@@ -1,6 +1,4 @@
 require './lib/item'
-require './lib/auction'
-require './lib/attendee'
 
 RSpec.describe do
   it 'exists and has attributes' do

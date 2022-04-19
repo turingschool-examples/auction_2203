@@ -1,4 +1,3 @@
-require './lib/item'
 require './lib/attendee'
 
 RSpec.describe do
