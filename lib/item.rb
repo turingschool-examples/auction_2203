@@ -11,17 +11,17 @@ class Item
   end
 
   def current_high_bid
-    @bids.values.max
+    highest = 0
+    @bids.values.each do |amount|
+      if amount > highest
+        highest = amount
+      end
+    end
+    highest
   end
 
-# another way to return current_high_bid by iteration
+# the method below returns the current_high_bid, BUT it returns a nil value for potential_revenue method
   # def current_high_bid
-  #   highest = 0
-  #   @bids.values.each do |amount|
-  #     if amount > highest
-  #       highest = amount
-  #     end
-  #   end
-  #   highest
+  #   @bids.values.max
   # end
 end
