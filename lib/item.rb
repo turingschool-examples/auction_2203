@@ -12,6 +12,10 @@ class Item
   end
 
   def current_high_bid
-    @bids.max_by { |k, v| v }[1]
+    if @bids.count > 0
+      @bids.max_by { |k, v| v }[1]
+    else
+      0
+    end
   end
 end

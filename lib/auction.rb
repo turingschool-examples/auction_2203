@@ -20,4 +20,10 @@ class Auction
       item.bids.count == 0
     end
   end
+
+  def potential_revenue
+    @items.reduce(0) do |memo, item|
+      memo + item.current_high_bid
+    end
+  end
 end
