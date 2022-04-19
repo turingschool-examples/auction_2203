@@ -20,4 +20,13 @@ class Auction
     end
     names
   end
+
+  def unpopular_items
+    not_popular = []
+    @items.each do |item|
+      not_popular << item.name if item.bids < item.current_high_bid
+      binding.pry
+    end
+    not_popular.sort[-2]
+  end
 end

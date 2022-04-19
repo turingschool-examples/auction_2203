@@ -44,6 +44,7 @@ RSpec.describe Auction do
     item2 = Item.new('Bamboo Picture Frame')
     item3 = Item.new('Homemade Chocolate Chip Cookies')
     item4 = Item.new('2 Days Dogsitting')
+    item5 = Item.new('Forever Stamps')
 
     attendee1 = Attendee.new({name: 'Megan', budget: '$50'})
     attendee2 = Attendee.new({name: 'Bob', budget: '$75'})
@@ -59,7 +60,7 @@ RSpec.describe Auction do
     item1.add_bid(attendee1, 22)
     item4.add_bid(attendee3, 50)
 
-  expect(auction.unpopular_items).to eq([item2, item3, item4])
+  expect(auction.unpopular_items).to eq([item2, item3, item5])
   end
 
 end
