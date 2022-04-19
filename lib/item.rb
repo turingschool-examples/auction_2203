@@ -7,10 +7,16 @@ class Item
   end
 
   def add_bid(attendee, amount)
-    @bids[attendee] = amount
+    if !@bids.frozen?
+      @bids[attendee] = amount
+    end
   end
 
   def current_high_bid
     @bids.values.sort.pop
+  end
+
+  def close_bidding
+    @bids.freeze
   end
 end
