@@ -20,6 +20,7 @@ RSpec.describe Auction do
 
   it "has readable attributes" do
     expect(auction.items).to eq([])
+    expect(auction.potential_revenue).to eq(0)
   end
 
   it "can add items" do
