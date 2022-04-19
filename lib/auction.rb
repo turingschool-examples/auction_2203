@@ -29,4 +29,20 @@ class Auction
     end
     sum
   end
+
+  def bidders
+    bidders = []
+    @items.each do |item|
+      item.bids.keys.each do |attendee|
+        bidders << attendee.name if !bidders.include?(attendee.name)
+      end
+    end
+    bidders
+  end
+
+  def bidder_info
+    info = Hash.new(0)
+    @items.each do |item|
+    end
+  end
 end
