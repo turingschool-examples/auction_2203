@@ -18,6 +18,7 @@ RSpec.describe Attendee do
 
     expect(@attendee.name).to eq('Megan')
     expect(@attendee.budget).to eq('50')
+    #Don't know how @attendee.budget is supposed to show up as '$50'
   end
 
 end
