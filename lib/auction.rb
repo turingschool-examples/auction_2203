@@ -57,9 +57,9 @@ class Auction
     end
     bidder_info_hash
   end
-
+  #
   # def date_string
-  #   date = Date.new
+  #   date = Date.new(19,03,2021)
   # end
 
 end

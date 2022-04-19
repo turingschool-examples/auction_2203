@@ -119,7 +119,7 @@ RSpec.describe Auction do
     expect(auction.bidder_info).to eq(expected_hash)
   end
 
-  # xit "can return the date" do
+  # it "can return the date" do
   #   auction.add_item(item1)
   #   auction.add_item(item2)
   #   auction.add_item(item3)
