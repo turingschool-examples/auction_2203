@@ -16,14 +16,12 @@ class Auction
     end
   end
 
-  def add_bid(attendee, budget)
-
+  def add_bid(attendee, bid)
+    require "pry"; binding.pry
   end
 end
 
 
-# Graded Items:
-#  1. Add a bid to an Item: `Item #add_bid`
 #  1. Return the current high bid of an Item: `Item #current_high_bid`
 #  1. Return the list of unpopular items from an Auction: `Auction #unpopular_items`
 #  1. Return the potential revenue from an Auction: `Auction #potential_revenue`
