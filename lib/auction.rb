@@ -41,12 +41,27 @@ class Auction
   end
 
   def bidder_info
-    @items.flat_map do |item|
+    bidder_hash = {}
+    @items.map do |item|
       item.bids.map do |bid|
         bid[0]
       end
-    end.uniq
-    require "pry";binding.pry
+    end.flatten.uniq.each do |bidder|
+      bidder_hash[bidder] = {
+        :budget => bidder.budget,
+        :items => []
+      }
+    end
+
+    bidder_hash.each do |bidder, values|
+      @items.map do |item|
+        item.bids.map do |bid|
+          #if bid != {}
+            values[:items] << item if bid.include?(bidder)
+          #end
+        end
+      end
+    end
   end
 
 
