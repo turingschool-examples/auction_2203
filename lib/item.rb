@@ -1,7 +1,7 @@
 
 class Item
   attr_reader :name
-  attr_writer :bids
+  attr_accessor :bids
   def initialize(name)
     @name = name
     @bids = {}

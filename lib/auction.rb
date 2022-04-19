@@ -25,4 +25,34 @@ class Auction
     @attendees << attendee
   end
 
+  def unpopular_items
+    #itterate through bids, make an array
+    # of items that have been bidded on.
+    #itterate through items, return any items
+    # not in bidded array.
+    bidded = []
+    not_bidded = []
+    @items[0].bids.each do |bid|
+      bidded << bid
+      if !items.include?(bid)
+        # require "pry"; binding.pry
+        not_bidded << bid
+      end
+    end
+    not_bidded
+  end
+
+  def potential_revenue
+    # itterate through bids hash,
+    # find highest bid per item,
+    # return sum of all of the highest bids
+  end
+
+  def bidders
+    bidders = []
+    @items[0].bids.each do |bid|
+      bidders << bid[0].name
+    end
+    bidders
+  end
 end
