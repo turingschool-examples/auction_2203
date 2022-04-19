@@ -6,4 +6,13 @@ def initialize(name, bids = {})
   @bids = bids
 end
 
-end 
+  def add_bid(attendee, budget)
+    @bids[attendee] = budget
+  end
+
+  def current_high_bid
+    @bids.values.max 
+  end
+
+
+end
