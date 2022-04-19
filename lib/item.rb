@@ -1,3 +1,6 @@
+require './lib/attendee'
+require './lib/auction'
+
 class Item
   attr_reader :name, :bids
 
@@ -6,5 +9,12 @@ class Item
     @name = name
     @bids = {}
   end
+
+  def add_bid(attendee, amount)
+    @bids[attendee] = amount
+  end
+
+
+
 
 end
