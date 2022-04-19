@@ -64,6 +64,8 @@ class Auction
     Time.now.strftime('%d/%m/%Y')
   end
 
+  # I know I have the current_high_bid method for Item but I don't think it will help me here
+
   def close_auction
     close_hash = Hash.new('Not Sold')
     @items.each do |item|
