@@ -21,4 +21,8 @@ attr_reader :items
         #the total of all the items highests bids - take into account current_high_bid
         items.map { |item| item.current_high_bid }.compact!.sum
     end
+    
+    def bidders
+        items.flat_map { |item| item.bids.keys.map { |attributes| attributes.name }}.uniq
+    end
 end
