@@ -1,6 +1,6 @@
 require './lib/item'
 
-Rspec.describe Item do
+RSpec.describe Item do
   before :each do
 
     @item1 = Item.new('Chalkware Piggy Bank')
