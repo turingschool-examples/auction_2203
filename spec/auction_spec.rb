@@ -71,5 +71,15 @@ RSpec.describe Auction do
 
       expect(auction.bidders).to eq(["Megan", "Bob", "Mike"])
     end
+
+    it "can list bidder info" do
+      expect = {
+        attendee1 => {budget: 50, items: [item1]},
+        attendee2 => {budget: 75, items: [item1, item3]},
+        attendee3 => {budget: 100, items: [item4]}
+      }
+
+      expect(auction.bidder_info).to eq(expect)
+    end
   end
 end
