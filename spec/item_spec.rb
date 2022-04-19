@@ -27,6 +27,7 @@ RSpec.describe Item do
   it 'can add bids' do
     item1.add_bid(attendee2, 20)
     item1.add_bid(attendee1, 22)
+    
 
     expected = {
               attendee2 => 20,

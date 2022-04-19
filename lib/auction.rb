@@ -16,4 +16,14 @@ class Auction
     end
     item_name
   end
+
+  def unpopular_items # not sure how to access bids hash
+    require "pry"; binding.pry
+    unpop = []
+    @items.map do |unpop|
+      if unpop[bids] == nil
+        unpop
+      end
+    end
+  end
 end
