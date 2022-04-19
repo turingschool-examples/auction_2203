@@ -9,11 +9,11 @@ describe Attendee do
   let(:attendee) { Attendee.new({name: 'Megan', budget: '$50'}) }
 
   it "exists" do
-    expect(item1).to be_a Attendee
+    expect(attendee).to be_a Attendee
   end
 
   it "has attributes" do
-    expect(item1.name).to eq "Brunch"
-    expect(item1.participants).to eq({})
+    expect(attendee.name).to eq "Megan"
+    expect(attendee.budget).to eq(50)
   end
 end

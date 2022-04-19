@@ -9,6 +9,6 @@ describe Auction do
   let(:attendee) { Attendee.new({name: 'Megan', budget: '$50'}) }
 
   it "exists" do
-    expect(item1).to be_a Item
+    expect(auction).to be_a Auction
   end
 end
