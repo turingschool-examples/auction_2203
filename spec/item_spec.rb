@@ -32,6 +32,18 @@ RSpec.describe Item do
     expect(@item1.current_high_bid).to eq(22)
   end
 
+  it 'can close bidding' do
+    @item1.add_bid(@attendee2, 20)
+    @item1.add_bid(@attendee1, 22)
+    @item1.close_bidding
+    @item1.add_bid(@attendee3, 70)
+    expected = {
+      @attendee2 => 20,
+      @attendee1 => 22
+    }
+    expect(@item1.bids).to eq(expected)
+  end
+
 
 
 end
