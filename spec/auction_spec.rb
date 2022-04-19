@@ -50,8 +50,19 @@ describe Auction do
       @item1.add_bid(@attendee2, 20)
       @item1.add_bid(@attendee1, 22)
       @item4.add_bid(@attendee3, 50)
-      expected = [@item2, @item3, @item5]
-      expect(@auction.unpopular_items).to eq(expected)
+      expected1 = [@item2, @item3, @item5]
+      expect(@auction.unpopular_items).to eq(expected1)
+      expected2 = [@item2, @item5]
+      @item3.add_bid(@attendee2, 15)
+      expect(@auction.unpopular_items).to eq(expected2)
+    end
+
+    it 'can give potential revenue' do
+      @item1.add_bid(@attendee2, 20)
+      @item1.add_bid(@attendee1, 22)
+      @item4.add_bid(@attendee3, 50)
+      @item3.add_bid(@attendee2, 15)
+      expect(@auction.potential_revenue).to eq(87)
     end
   end
 end
