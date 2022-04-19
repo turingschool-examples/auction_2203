@@ -43,7 +43,7 @@ RSpec.describe Auction do
 
   end
 
-  describe "Iteration III" do
+  describe "Iteration II" do
     before :each do
 
       @item3 = Item.new('Homemade Chocolate Chip Cookies')
