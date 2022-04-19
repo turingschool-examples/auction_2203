@@ -32,6 +32,17 @@ class Auction
       revenue += item.current_high_bid
     end
     revenue
-    # require 'pry'; binding.pry
   end
+
+  def bidders
+    names = []
+    @items.each do |item|
+      if item.bids.count > 0
+        names << item.bids.keys[0].name
+      end
+    end
+    names
+  end
+
+
 end

@@ -122,7 +122,7 @@ RSpec.describe Auction do
 
       item3.add_bid(attendee2, 15)
 
-      expect(auction.bidders).to eq["Megan", "Bob", "Mike"]
+      expect(auction.bidders).to eq(["Megan", "Bob", "Mike"])
     end
 
 end
