@@ -1,4 +1,5 @@
 require './lib/item'
+require './lib/attendee'
 class Auction
   attr_reader :items
   def initialize
@@ -11,5 +12,9 @@ class Auction
 
   def item_names
     @items.map { |item| item.name }
+  end
+
+  def unpopular_items
+    @items.select { |item| item.bids == {}}
   end
 end
