@@ -1,3 +1,5 @@
+require "./lib/attendee"
+
 class Item
   attr_reader :name,
               :bids
@@ -12,6 +14,6 @@ class Item
   end
 
   def current_high_bid
-    bids.max_by { |attendee, bid| bid}[1]
+    bids.max_by { |attendee, bid| bid }[1]
   end
 end

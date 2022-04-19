@@ -19,4 +19,10 @@ class Auction
   def unpopular_items
     @items.map { |item| item if item.bids == {} }.compact
   end
+
+  def potential_revenue
+    @items.map do |item|
+      item.current_high_bid if !unpopular_items.include?(item)
+    end.compact.sum
+  end
 end
