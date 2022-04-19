@@ -1,5 +1,6 @@
 require './lib/auction'
 require './lib/item'
+require './lib/attendee'
 RSpec.describe Auction do
   before :each do
     @auction = Auction.new
@@ -31,6 +32,14 @@ RSpec.describe Auction do
     @auction.add_item(@item1)
     @auction.add_item(@item2)
     expect(@auction.item_names).to eq(["Chalkware Piggy Bank", "Bamboo Picture Frame"])
+  end
+
+  it 'can have unpopular items' do
+    @item1.add_bid(@attendee2, 20)
+    @item1.add_bid(@attendee1, 22)
+    @item4.add_bid(@attendee3, 50)
+    @item3.add_bid(@attendee2, 15)
+    expect(@auction.unpopular_items).to eq([@item2, @item5])
   end
 
 
