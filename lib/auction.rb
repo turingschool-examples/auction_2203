@@ -20,7 +20,17 @@ class Auction
         unpopular << item
       end
     end
-    unpopular 
+    unpopular
+  end
+
+  def potential_revenue
+    revenue = 0
+    array = @items.map { |item| item.current_high_bid }
+      array.compact.sum
+  end
+
+  def bidders
+    
   end
 
 end
