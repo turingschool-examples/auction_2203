@@ -8,7 +8,6 @@ class Auction
   end
 
   def date
-    # require 'pry'; binding.pry
     date = "#{today_date.day}/#{today_date.month}/#{today_date.year}"
   end
 
@@ -76,17 +75,30 @@ class Auction
 
   def close_auction
     closing = {}
-    high_bids = Hash.new{|h,k| h[k] = [0,0] }
+    high_bids = Hash.new{|h,k| h[k] = {bid: 0, item: nil} }
+    another_hash = {}
 
     @items.each do |item|
       item.bids.each do |k, v|
-        if high_bids[k][0] < v
-          high_bids[k][0] = v
-          high_bids[k][1] = item
+        if high_bids[k][:bid] < v
+          high_bids[k][:bid] = v
+          high_bids[k][:item] = item
         end
       end
     end
-    require 'pry'; binding.pry
+
+    @items.each do |item|
+      high_bids.each do |k, v|
+        if item.current_high_bid == v[:bid]
+          closing[item] = k
+        end
+      end
+    end
+
+    hash
+
+    # require 'pry'; binding.pry
+
 
   end
 
