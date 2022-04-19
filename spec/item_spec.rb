@@ -4,8 +4,8 @@ require 'Rspec'
 describe Item do
   context 'Iteration 1' do
     before(:each) do
-      item1 = Item.new('Chalkware Piggy Bank')
-      item2 = Item.new('Bamboo Picture Frame')
+      @item1 = Item.new('Chalkware Piggy Bank')
+      @item2 = Item.new('Bamboo Picture Frame')
     end
     it 'exists' do
       expect(@item1).to be_an_instance_of(Item)
