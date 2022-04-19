@@ -12,8 +12,6 @@ RSpec.describe Auction do
   end
 
   it 'has attributes' do
-    expect().to eq()
+    expect(@auction.items).to eq([])
   end
-
-
 end
