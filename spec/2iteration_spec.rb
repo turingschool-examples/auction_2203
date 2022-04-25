@@ -20,7 +20,25 @@ describe "Iteration 1" do
       auction.add_item(item3)
       auction.add_item(item4)
       auction.add_item(item5)
+
       expect(item1.bids).to eq({})
+    end
+
+    it "can add bids" do
+      auction.add_item(item1)
+      auction.add_item(item2)
+      auction.add_item(item3)
+      auction.add_item(item4)
+      auction.add_item(item5)
+
+      item1.add_bid(attendee2, 20)
+      item1.add_bid(attendee1, 22)
+
+      expected_hash = {
+        attendee2 => 20,
+        attendee1 => 22
+        }
+      expect(item1.bids).to eq expected_hash
     end
   end
 
