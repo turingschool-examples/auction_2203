@@ -41,7 +41,7 @@ describe "Iteration 1" do
       expect(item1.bids).to eq expected_hash
     end
 
-    it "returns the highest bid on an item" do
+    it "returns the highest bid on an item" do  # !!!!!!! DO AGAIN !!!!!!!!
       auction.add_item(item1)
       auction.add_item(item2)
       auction.add_item(item3)
@@ -55,9 +55,19 @@ describe "Iteration 1" do
     end
   end
 
-  describe Attendee do
-  end
-
   describe Auction do
+    it "can list unpopular_items with no bids" do
+      auction.add_item(item1)
+      auction.add_item(item2)
+      auction.add_item(item3)
+      auction.add_item(item4)
+      auction.add_item(item5)
+
+      item1.add_bid(attendee2, 20)
+      item1.add_bid(attendee1, 22)
+      item4.add_bid(attendee3, 50)
+
+      expect(auction.unpopular_items).to eq [item2, item3, item5]
+    end
   end
 end

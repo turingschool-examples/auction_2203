@@ -7,7 +7,19 @@ class Item
     @bids = {}
   end
 
-  def add_bid(attendee, amount)
-    @bids[attendee] = amount
+  def add_bid(attendee, bid)
+    @bids[attendee] = bid
+  end
+
+  def current_high_bid # !!!!!!! DO AGAIN !!!!!!!!
+    highest = 0
+    @bids.values.each do |bid|
+      highest = bid if bid > highest
+    end
+    highest
+  end
+
+  def unpopular_items
+
   end
 end
