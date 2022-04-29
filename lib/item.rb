@@ -4,24 +4,22 @@ class Item
   def initialize(name)
     @name = name
     @bids = {}
+    @bidding_open = true
   end
 
-  def add_bid(attendee, bid)
-    @bids[attendee] = bid.to_i
+  def add_bid(attendee, amount)
+    @bids[attendee] = amount if @bidding_open
   end
 
   def current_high_bid
     highest = 0
-    @bids.values.each do |amount|
-      if amount > highest
-        highest = amount
-      end
+    @bids.each do |attendee, amount|
+      highest = amount if amount > highest
     end
     highest
   end
 
-# the method below returns the current_high_bid, BUT it returns a nil value for potential_revenue method
-  # def current_high_bid
-  #   @bids.values.max
-  # end
+  def close_bidding
+    @bidding_open = false
+  end
 end
