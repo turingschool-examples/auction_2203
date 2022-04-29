@@ -10,6 +10,15 @@ class Auction
   end
 
   def item_names
-    @items.map { |item| item.name }
+    @items.map do |item|
+      item.name
+    end
+  end
+
+  def unpopular_items     # iterate through items and return items with no bids
+    no_bids = []
+    @items.each do |item|
+      no_bids << item if item.bids == {}
+    end
   end
 end

@@ -18,8 +18,4 @@ class Item
     end
     highest
   end
-
-  def unpopular_items
-
-  end
 end
